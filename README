@@ -1,0 +1,14 @@
+*******Panel-dictionary plasmoid********
+
+Written by Alan D Moore, http://www.alandmoore.com (me AT alandmoore D0T com)
+
+This plasmoid is an attempt to emulate the kde3 "kdict" panel plugin, though notslavishly so.  I just wanted several things that were missing from KDE4's built-in dictionary, namely:
+ - ability to configure the server
+ - text box in the panel 
+ - popup window with definition for easier copying/etc.
+
+Because of unfortunate limitations to the dict data engine in KDE 4.3, I have provided alternate backends; namely, python-dictclient and dict command line client.  I highly recommend python-dictclient.  I know it's available in Ubuntu and Debian, probably your distro packages it as well.
+
+This is my first attempt at a plasmoid, so expect bugs.  Please email me about any bugs you find.
+
+Thanks and may God bless you!

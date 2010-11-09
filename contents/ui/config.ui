@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>259</width>
+    <height>245</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QGroupBox" name="backend_config_box">
+   <property name="geometry">
+    <rect>
+     <x>1</x>
+     <y>0</y>
+     <width>261</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string extracomment="Put in a custom URL or IP address for a server running the DICT service."/>
+   </property>
+   <property name="title">
+    <string>Backend to Use</string>
+   </property>
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>19</y>
+      <width>241</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetDefaultConstraint</enum>
+     </property>
+     <item>
+      <widget class="QRadioButton" name="python_dictclient_button">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="toolTip">
+        <string>Use the Python dictclient library backend.  Requires the python-dictclient library.</string>
+       </property>
+       <property name="text">
+        <string>Python dictclient library</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="dict_client_button">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="toolTip">
+        <string>Use the &quot;dict&quot; command.  Requires that &quot;dict&quot; be installed.  See dict's man page for configuration instructions.</string>
+       </property>
+       <property name="text">
+        <string>Command line dict client</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="dict_dataengine_button">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="toolTip">
+        <string>Use the dict dataengine that ships with Plasma.  Unfortunately, it is quite limited at this time.  Not recommended.</string>
+       </property>
+       <property name="text">
+        <string>Plasma dict dataengine</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="server_config_box">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>120</y>
+     <width>241</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Server selection</string>
+   </property>
+   <widget class="QWidget" name="verticalLayoutWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>-1</x>
+      <y>20</y>
+      <width>241</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QRadioButton" name="localhost_server_button">
+       <property name="toolTip">
+        <string>Consult a local computer (Requires you to run dictd or another DICT server on this computer)</string>
+       </property>
+       <property name="text">
+        <string>localhost (this computer)</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="dict_org_server_button">
+       <property name="toolTip">
+        <string>Use the DICT server at dict.org (requires internet connection)</string>
+       </property>
+       <property name="text">
+        <string>dict.org (internet)</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QRadioButton" name="custom_server_button">
+         <property name="toolTip">
+          <string>Type in a custom hostname or IP address for a server running the DICT service.</string>
+         </property>
+         <property name="text">
+          <string>Custom</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="serverUrlEdit">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>custom_server_button</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>serverUrlEdit</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>42</x>
+     <y>211</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>119</x>
+     <y>206</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>python_dictclient_button</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>server_config_box</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>58</x>
+     <y>38</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>50</x>
+     <y>134</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dict_client_button</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>server_config_box</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>106</x>
+     <y>54</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>130</x>
+     <y>175</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dict_dataengine_button</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>server_config_box</receiver>
+   <slot>setHidden(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>158</x>
+     <y>86</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>160</x>
+     <y>128</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

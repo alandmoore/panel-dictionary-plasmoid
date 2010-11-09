@@ -1,0 +1,40 @@
+panel-dictionary plasmoid
+
+Version 0.3.2 2009-12-25 
+ * NEW FEATURES
+   - Force definitions to display black on white
+ * FIXES
+   - Unicode support fixed on dict client backend (only).
+
+Version 0.3.1 2009-08-31
+ * FIXES
+   - Fixed sizing issues when used in the panel
+
+
+Version 0.3 2009-08-27
+ * NEW FEATURES
+   - Redesigned definition view with a tabbed interface
+   - Matched words can be clicked to look them up
+ * FIXES
+   - Removed useless blank context menu in combobox
+
+Version 0.2 2009-08-25
+ * FIXES
+   - Appearance configuration allows changing size of combobox and color of text
+   - Improvements to output of dict commandline backend
+   - dict command line backend allows server setting
+   - added icons to config dialog
+
+Vesrion 0.1.1 2009-08-23
+ * FIXES
+   -combo box now acquires focus even when other windows are active (thanks emdek!)
+   -python-dictclient output now includes dictionary names for each definition.
+
+Version 0.1 2009-08-21
+ * Initial release
+ * KNOWN ISSUES:
+  - combo box has a hard time acquiring and keeping focus when in the panel, especially when there is a maximized application on screen.
+  - text is always black, which doesn't work well with some themes
+  - dict dataengine backend is just lacking.  Not really much I can do about this.
+  - background sizing issues when moved from the panel
+  - I am not happy with the implementation of the definition dialog box.  I had to hack it together because KMessageBox is modal and would lock up Plasma.

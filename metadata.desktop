@@ -1,0 +1,18 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Panel Dictionary
+Comment=A configurable dictionary for the panel or desktop
+Type=Service
+ServiceTypes=Plasma/Applet
+Icon=accessories-dictionary
+X-Plasma-API=python
+X-Plasma-MainScript=code/main.py
+X-KDE-PluginInfo-Author=Alan Moore
+X-KDE-PluginInfo-Email=me@alandmoore.com
+X-KDE-PluginInfo-Name=panel-dictionary
+X-KDE-PluginInfo-Version=0.3.2
+X-KDE-PluginInfo-Website=http://www.alandmoore.com/
+X-KDE-PluginInfo-Category=Language
+X-KDE-PluginInfo-Depends=
+X-KDE-PluginInfo-License=GPL
+X-KDE-PluginInfo-EnabledByDefault=true
